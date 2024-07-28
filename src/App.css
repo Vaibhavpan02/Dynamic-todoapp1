@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  background-image: url('https://images.pexels.com/photos/2041638/pexels-photo-2041638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  margin: 0;
+}
+
+.App {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #49504a;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  flex: 1; /* Allow ul to grow and take available space */
+  overflow-y: auto; /* Add vertical scrollbar */
+  margin: 0; /* Remove default margin */
+  max-height: 100%;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li .todo-buttons {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+
+li .todo-buttons button {
+  background-color: #dc3545;
+  padding: 8px 12px; /* Slightly smaller padding */
+}
+
+li .todo-buttons button:hover {
+  background-color: #c82333;
+}
+
+li button.edit-button {
+  background-color: #007bff; /* Different color for edit button */
+}
+
+li button.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.update-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 8px 12px; /* Smaller padding */
+}
+
+.cancel-button {
+  background-color: #FFC107;
+  color: white;
+  padding: 8px 12px; /* Smaller padding */
+}
