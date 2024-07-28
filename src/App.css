@@ -8,24 +8,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 98vh;
+  height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 .App {
-  background: white;
+  background: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 600px;
-  height: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+  width: 80%;
+  width: 800px; 
+  height: 60vh; 
   text-align: center;
   display: flex;
   flex-direction: column;
+  overflow-y: auto; 
 }
 
 h1 {
   margin-bottom: 20px;
+  font-size: 2em; 
 }
 
 form {
@@ -39,6 +43,7 @@ input[type="text"] {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin-bottom: 10px;
+  font-size: 1em; 
 }
 
 button {
@@ -49,18 +54,19 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 1em; 
 }
 
 button:hover {
-  background-color: #49504a;
+  background-color: #218838;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  flex: 1; /* Allow ul to grow and take available space */
-  overflow-y: auto; /* Add vertical scrollbar */
-  margin: 0; /* Remove default margin */
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
   max-height: 100%;
 }
 
@@ -74,12 +80,12 @@ li {
 
 li .todo-buttons {
   display: flex;
-  gap: 10px; /* Space between the buttons */
+  gap: 10px;
 }
 
 li .todo-buttons button {
   background-color: #dc3545;
-  padding: 8px 12px; /* Slightly smaller padding */
+  padding: 8px 12px;
 }
 
 li .todo-buttons button:hover {
@@ -87,7 +93,7 @@ li .todo-buttons button:hover {
 }
 
 li button.edit-button {
-  background-color: #007bff; /* Different color for edit button */
+  background-color: #007bff;
 }
 
 li button.edit-button:hover {
@@ -110,11 +116,66 @@ li button.edit-button:hover {
 .update-button {
   background-color: #2196F3;
   color: white;
-  padding: 8px 12px; /* Smaller padding */
+  padding: 8px 12px;
 }
 
 .cancel-button {
   background-color: #FFC107;
   color: white;
-  padding: 8px 12px; /* Smaller padding */
+  padding: 8px 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    width: auto;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  input[type="text"], button, .todo-buttons button {
+    font-size: 0.9em;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li .todo-buttons {
+    margin-top: 10px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .edit-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  input[type="text"], button, .todo-buttons button {
+    font-size: 0.8em;
+  }
+
+  li {
+    padding: 8px;
+  }
+
+  .edit-buttons {
+    gap: 5px;
+  }
 }
