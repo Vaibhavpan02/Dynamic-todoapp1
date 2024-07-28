@@ -20,7 +20,7 @@ const App = () => {
   const fetchTodos = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/todos');
+      const response = await axios.get('https://dynamic-todoapp.onrender.com/todos');
       setTodos(response.data);
     } catch (error) {
       console.error('Error fetching todos:', error);
@@ -45,7 +45,7 @@ const App = () => {
     setNewTodo('');
 
     try {
-      await axios.post('http://localhost:3000/todos', newTodoItem);
+      await axios.post('https://dynamic-todoapp.onrender.com/todos', newTodoItem);
     } catch (error) {
       console.error('Error adding todo:', error);
       // Rollback if error occurs
@@ -57,7 +57,7 @@ const App = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
 
     try {
-      await axios.delete(`http://localhost:3000/todos/${id}`);
+      await axios.delete(`https://dynamic-todoapp.onrender.com/todos/${id}`);
     } catch (error) {
       console.error('Error deleting todo:', error);
       fetchTodos();
@@ -84,7 +84,7 @@ const App = () => {
     setEditText('');
 
     try {
-      await axios.put(`http://localhost:3000/todos/${editingTodo.id}`, updatedTodoItem);
+      await axios.put(`https://dynamic-todoapp.onrender.com/todos/${editingTodo.id}`, updatedTodoItem);
     } catch (error) {
       console.error('Error updating todo:', error);
       fetchTodos(); // Re-fetch todos in case of error
